@@ -6,13 +6,16 @@
         <div class="card-body">
             <div class="form-group">
                 <label for="menu">Name Category: </label>
-                <input type="text" name="menu" class="form-control" id="menu" placeholder="Enter Name">
+                <input type="text" name="name" class="form-control" id="name" placeholder="Enter Name">
             </div>
 
             <div class="form-group">
                 <label for="menu">Category: </label>
                 <select name="parent_id" class="form-control" id="parent_id">
                     <option value="0">Parent Category</option>
+                    @foreach ($menus as $menu)
+                        <option value="{{$menu->id}}">{{$menu->name}}</option>
+                    @endforeach
                 </select>
             </div>
 
